@@ -1,0 +1,25 @@
+<div style="padding-left: 25px;padding-right: 25px;">
+    <div class="container">
+        <div class="image">
+            {{ this.Product.productName }}
+        </div>
+        <div class="content">
+            <div class="name">
+                {{ this.Product.productName }}     
+            </div>
+            <div class="price">
+                Cena: {{ this.Product.productPrice }} zł   
+            </div>
+            <div class="description">
+                {{ this.Product.productDescription }}     
+            </div>
+        </div>
+    </div>
+    <div class="actionButtons">
+        <div style="margin:auto;width:30%">
+            <a class="big" routerLink="/buy_now/item/{{ this.id }}" routerLinkActive="active" ariaCurrentWhenActive="page"><button>Kup teraz</button></a>
+            <button (click)="addToCart(this.Product.productID, this.Product.productName)">Do koszyka</button>
+        </div>
+    </div>
+</div>
+

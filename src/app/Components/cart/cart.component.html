@@ -1,0 +1,10 @@
+<div style="padding-left: 25px;padding-right: 25px;width: 100%;">
+    <h1 style="text-align: center;" *ngIf="this.cartList[0]; else template">Twój koszyk:</h1>
+    <ng-template #template>
+        <h1 style="text-align: center;">Twój koszyk jest pusty !</h1>
+    </ng-template>
+    <div *ngFor="let product of this.cartList;let indexOfelement=index;">
+        <app-cart-item (cartUpdate)="renewList()" count="{{ product.count }}" index="{{ this.indexOfelement+1 }}" name="{{ this.product.productName }}" id="{{ this.product.id }}"></app-cart-item>
+    </div>
+    <a class="big" routerLink="/buy_now" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="this.cartList[0]"><button style="float:right;margin-top:10px">Złóż zamówienie</button></a>
+</div>

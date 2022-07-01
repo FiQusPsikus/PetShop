@@ -1,0 +1,14 @@
+<div style="padding-left: 25px;padding-right: 25px;">
+    <h1>Kategorie</h1>
+    Stan:
+    <select [(ngModel)]="selectedState" style="display:inline-block" (change)="changeState()">
+        <option value="1">Nowy</option>
+        <option value="2">W przygotowaniu</option>
+        <option value="3">Wysłany</option>
+        <option value="4">Zrealizowano</option>
+        <option value="5">Wszystkie</option>
+    </select>
+    <div *ngFor="let order of this.orderData">
+        <app-order-item-admin orderData="{{ this.order }}"></app-order-item-admin>
+    </div>
+</div>

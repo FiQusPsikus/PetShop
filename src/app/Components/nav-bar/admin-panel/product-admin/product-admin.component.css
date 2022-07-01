@@ -1,0 +1,10 @@
+.productPreview{
+    width: 50%;
+    /* background-color: blue;     */
+}
+.flexContainer{
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    grid-template-columns: 1fr 1fr 1fr 1fr; */
+}

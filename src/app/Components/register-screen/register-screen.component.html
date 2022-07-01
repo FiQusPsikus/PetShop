@@ -1,0 +1,44 @@
+<div style="padding-left: 25px;padding-right: 25px;width: 100%;">
+    <div class="loginContainer">
+         <section class="loginForm">
+            <h1>Zarejestruj się:</h1>
+            <form [formGroup]="form" (ngSubmit)="onSubmitModelBased()">
+                <p>
+                    <label>Imie:</label><br>
+                    <input type="text" formControlName="firstName">
+                </p>
+                <p>
+                    <label>Nazwisko:</label><br>
+                    <input type="text" formControlName="lastName">
+                </p>
+                <p>
+                    <label>Adres:</label><br>
+                    <input type="text" formControlName="address">
+                </p>
+                <p>
+                    <label>Kod pocztowy:</label><br>
+                    <input type="text" formControlName="post_code">
+                </p>
+                <p>
+                    <label>Miejscowość:</label><br>
+                    <input type="text" formControlName="city">
+                </p>
+                <p>
+                    <label>Telefon:</label><br>
+                    <input type="text" formControlName="phone">
+                </p>
+                <p>
+                    <label>Nazwa użytkownika:</label><br>
+                    <input type="text" formControlName="login">
+                </p>
+                <p>
+                    <label>Hasło:</label><br>
+                    <input type="password" formControlName="password">
+                </p>
+                <p>
+                    <button type="submit" [disabled]="!form.valid">Zarejestruj się</button>
+                </p>
+            </form>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="CartItem">
+    <div class="CartAttribute" id="CartItemID">{{ this.index }}</div>
+    <div class="CartAttribute" id="CartItemName">{{ this.name }}</div>
+    <div class="CartAttribute" id="CartItemCounter">Ilość: {{ this.count }}</div>
+    <form class="CartAttribute" [formGroup]="form" (ngSubmit)="setCount(this.id)">
+        <input type="text" formControlName="counter" pattern="\d{0,3}">
+        <button type="submit" [disabled]="!form.valid">Przelicz</button>
+    </form>
+    <div class="CartAttribute" id="CartItemPrice">Kwota: {{ this.price }}</div>
+    <div class="CartAttribute" id="CartItemRemove">
+        <button mat-fab color="primary" style="height: 40px;" (click)="removeFromCart(this.id)">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+</div>
+
+

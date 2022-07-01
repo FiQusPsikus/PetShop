@@ -1,0 +1,56 @@
+.upperMenu{
+    margin-top:0px;
+    min-width:none;
+}
+.upperMenu li {
+    display:inline;
+    padding-left: 10px;
+}
+.big{
+    text-decoration:none;
+    color:black;
+}
+.right{
+    margin-right: 10px;
+}
+.mainMenu{
+    width: 75%;
+    height: 75px;
+    margin:auto;
+}
+.mainMenuList{
+    display:flex;
+    flex-flow: row nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: large;
+}
+.mainMenuList div{
+    width:150px;
+    line-height: 75px;
+    text-align: center;
+}
+.mainMenu a{
+    text-decoration: none;
+}
+.logo{
+    width:100%;
+    font-size:xx-large;
+    height: 50px;
+    line-height: 50px;
+    text-decoration: none;
+    background-color: rgb(255, 255, 255);
+    min-width: 300px;
+    text-align: center;
+}
+.mainMenuListHamburger{
+    display:none;
+}
+@media (max-width: 800px) {
+    .mainMenuListHamburger {
+      display: block;
+    }
+    .big{
+        display: none;
+    }
+  }

@@ -1,0 +1,21 @@
+<div style="padding-left: 25px;padding-right: 25px;width: 100%;">
+    <div class="loginContainer">
+         <section class="loginForm">
+            <h1>Zaloguj się:</h1>
+            <form [formGroup]="form" (ngSubmit)="onSubmitModelBased()">
+                <p>
+                    <label>Nazwa użytkownika:</label><br>
+                    <input type="text" formControlName="firstName">
+                </p>
+                <p>
+                    <label>Hasło:</label><br>
+                    <input type="password" formControlName="password">
+                </p>
+                <p>
+                    <button type="submit" [disabled]="!form.valid">Zaloguj się</button>
+                </p>
+            </form>
+        </section>
+        <a class="big" routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">Nie posiadasz konta ?</a>
+    </div>
+</div>

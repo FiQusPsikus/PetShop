@@ -1,0 +1,40 @@
+<div style="padding-left: 25px;padding-right: 25px;">
+    <div style="padding-left: 25px;padding-right: 25px;width: 100%;">
+        <app-order-preview></app-order-preview>
+        <div class="orderContainer">
+             <section class="orderForm">
+                <h1>Twoje dane:</h1>
+                <form [formGroup]="form" (ngSubmit)="onSubmitModelBased()">
+                    <p>
+                        <label>Imie:</label><br>
+                        <input type="text" formControlName="firstName">
+                    </p>
+                    <p>
+                        <label>Nazwisko:</label><br>
+                        <input type="text" formControlName="lastName">
+                    </p>
+                    <p>
+                        <label>Adres(Ulica oraz numer domu/lokalu):</label><br>
+                        <input type="text" formControlName="adress">
+                    </p>
+                    <p>
+                        <label>Kod pocztowy(xx-xxx):</label><br>
+                        <input type="text" formControlName="post_code">
+                    </p>
+                    <p>
+                        <label>Miejscowość:</label><br>
+                        <input type="text" formControlName="city">
+                    </p>
+                    <p>
+                        <label>Telefon:</label><br>
+                        <input type="text" formControlName="phone">
+                    </p>
+                    <p>
+                        <button type="submit" [disabled]="!form.valid">Złóż zamówienie !</button>
+                    </p>
+                </form>
+            </section>
+        </div>
+    </div>
+    
+</div>

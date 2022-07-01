@@ -1,0 +1,12 @@
+<div class="orderPreview">
+    <h1>Szczegóły zamówienia:</h1>
+    <div class="orderItem" *ngIf="this.buyNow;else template">
+        <app-order-item name = "{{ this.buyNowName }}" count="1"></app-order-item>
+    </div>
+    <ng-template #template>
+        <div *ngFor="let product of this.cartList;let indexOfelement=index;">
+            <app-order-item count="{{ this.product.count }}" name="{{ this.product.productName }}"></app-order-item>
+        </div>
+    </ng-template>
+    <h1>Cena: {{ this.Price }} zł</h1>
+</div>

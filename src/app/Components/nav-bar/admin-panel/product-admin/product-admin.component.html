@@ -1,0 +1,40 @@
+<div style="padding-left: 25px;padding-right: 25px;">
+    <h1>Produkty</h1>
+    <div class="flexContainer">
+        <div class="productPreview" *ngFor="let product of this.products" >
+            <p><b>ID:</b>{{ product.productID }} | <b>Nazwa:</b>{{ product.productName }} | <b>Cena:</b>{{ product.productPrice }}
+                <button (click)="removeProduct(this.product.productID)">Usuń</button></p>
+        </div>
+        <div class="productPreview">
+            <section>
+                <h1>Dodaj produkt:</h1>
+                <form [formGroup]="form" (ngSubmit)="onSubmitModelBased()">
+                    <p>
+                        <label>Kategoria:</label><br>
+                        <select formControlName="category">
+                            <option value="1">Psy</option>
+                            <option value="2">Koty</option>
+                            <option value="3">Akwarystyka</option>
+                            <option value="4">Terrarystyka</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label>Nazwa:</label><br>
+                        <input type="text" formControlName="name">
+                    </p>
+                    <p>
+                        <label>Cena:</label><br>
+                        <input type="text" formControlName="price" pattern="\d{0,3}">
+                    </p>
+                    <p>
+                        <label>Opis:</label><br>
+                        <textarea formControlName="description"></textarea>
+                    </p>
+                    <p>
+                        <button type="submit" [disabled]="!form.valid">Dodaj produkt</button>
+                    </p>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>

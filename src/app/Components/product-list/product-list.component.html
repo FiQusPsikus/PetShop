@@ -1,0 +1,10 @@
+<div style="padding-left: 25px;padding-right: 25px;">
+    <div class="productList" *ngIf="this.products[0];else template">
+        <div class="grid-item" *ngFor="let product of this.products"><app-product-item name="{{ product.productName }}" price="{{ product.productPrice }}" id="{{ product.productID }}"></app-product-item></div>
+    </div>
+    <ng-template #template>
+        <div class="productList">
+            Brak produktów w tej kategorii.
+        </div>
+    </ng-template>
+</div>

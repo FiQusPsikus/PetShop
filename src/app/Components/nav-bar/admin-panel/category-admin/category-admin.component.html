@@ -1,0 +1,7 @@
+<div style="padding-left: 25px;padding-right: 25px;">
+    <h1>Kategorie</h1>
+    <div *ngFor="let category of this.categories" >
+        <p><b>ID:</b>{{ this.category.categoryID }} | <b>Nazwa:</b>{{ this.category.categoryName }}  
+            <button (click)="removeCategory(this.category.categoryID)">Usuń</button></p>
+    </div>
+</div>

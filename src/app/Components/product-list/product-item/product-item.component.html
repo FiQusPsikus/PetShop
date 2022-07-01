@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="image">{{ this.image }}</div>
+    <a routerLink="/item_preview/{{ this.id }}" routerLinkActive="active" ariaCurrentWhenActive="page" style="text-decoration: none;"><div class="name">{{ this.name }}</div></a>
+    <div class="price">{{ this.price }} zł</div>
+    <a class="big" routerLink="/buy_now/item/{{ this.id }}" routerLinkActive="active" ariaCurrentWhenActive="page"><button>Kup teraz</button></a>
+    <button (click)="addToCart(this.id, this.name)" style="margin-left:10px">
+        Koszyk
+    </button>
+</div>

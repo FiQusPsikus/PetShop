@@ -1,0 +1,11 @@
+<h3><b>Numer zamówienia: #{{ order.order_id }}</b></h3>
+    <p><h4 style="display:inline-block">Stan: {{ order.name }}</h4>
+    <select [(ngModel)]="selectedState" style="display:inline-block" (change)="changeState()">
+        <option value="1">Nowy</option>
+        <option value="2">W przygotowaniu</option>
+        <option value="3">Wysłany</option>
+        <option value="4">Zrealizowano</option>
+    </select>
+    <h4>Adresat: {{ order.first_name }} {{ order.last_name }}, tel. {{ order.phone }}</h4>
+    <h4>Adres: {{ order.address }}, {{ order.post_code }} {{ order.city }}</h4>
+    <h5>{{ order.details }}</h5>

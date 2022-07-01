@@ -1,0 +1,43 @@
+<div style="width: 100%;height: 25px; background-color: rgb(251, 240, 233);color:black;text-decoration: none;">
+    <div style="float:left">
+
+    </div>
+    <div style="float:right">
+        <ul class="upperMenu right">
+            <a class="big" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="this.user == 0; else template"><li>Zaloguj się</li></a>
+            <ng-template #template>
+                <a class="big" routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="logout()"><li>Wyloguj się</li></a>
+            </ng-template>
+            <a class="big" routerLink="/cart" routerLinkActive="active" ariaCurrentWhenActive="page"><li>Koszyk</li></a>
+        </ul>
+    </div>
+</div>
+<a routerLink="/admin_panel" style="text-decoration: none;" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="this.user == 1">
+    <div class="logo">
+        Panel Administratora
+    </div>
+</a>
+<div style="padding-left:25px;padding-right: 25px;">
+    <div style="width: 100%;height: 75px; background-color: rgb(255, 255, 255)">
+        <div class="mainMenu">
+            <div class="mainMenuList">
+                <a class="big" routerLink="" style="text-decoration: none;text-align: center" routerLinkActive="active" ariaCurrentWhenActive="page">
+                    <div class="logo">
+                        Sklep zoologiczny
+                    </div>
+                </a>
+                <div *ngFor="let category of this.categories">
+                <a class="big" routerLink="/category/{{ this.category.categoryID }}" routerLinkActive="active" ariaCurrentWhenActive="page"><div><b>{{ this.category.categoryName }}</b></div></a>
+                </div>
+                <div class="mainMenuListHamburger">
+                    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+                    <mat-menu #menu="matMenu">
+                      <div *ngFor="let category of this.categories">
+                      <a routerLink="/category/{{ this.category.categoryID }}" routerLinkActive="active" ariaCurrentWhenActive="page"><button mat-menu-item>{{ this.category.categoryName }}</button></a>
+                      </div>
+                    </mat-menu>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

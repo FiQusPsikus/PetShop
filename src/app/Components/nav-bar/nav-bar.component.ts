@@ -26,9 +26,13 @@ export class NavBarComponent implements OnInit {
   }
 
   login(): void{
-    if(localStorage.getItem('user') != "0"){
-      let user = JSON.parse(String(localStorage.getItem("user")))
-      this.user = user.user_id
+    if(localStorage.getItem('user')){
+      if(localStorage.getItem('user') != "0"){
+        let user = JSON.parse(String(localStorage.getItem("user")))
+        if(user.user_id){
+          this.user = user.user_id
+        }
+      }
     }
   }
 
